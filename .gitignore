@@ -1,0 +1,9 @@
+.vscode
+
+bin
+obj
+
+
+.angular
+
+.DS_Store

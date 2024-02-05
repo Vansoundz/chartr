@@ -1,0 +1,61 @@
+<div class="flex justify-between mb-6">
+  <div class="font-bold text-xl">
+    Songs
+  </div>
+  <div class="flex gap-2">
+    <button
+      class="py-2 px-4 text-purple-600 font-semibold rounded border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+      (click)="calculateFactorialId()"
+      >
+      Calculate Factorial Plays
+    </button>
+    <a
+      class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded"
+      routerLink="add-song"
+    >
+      Add Song
+    </a>
+  </div>
+</div>
+<div>
+  <table class="w-full divide-y divide-gray-200">
+    <thead class="bg-gray-50">
+      <tr>
+        <th class="text-start font-medium text-gray-500 uppercase tracking-wider py-3">#</th>
+        <th class="text-start font-medium text-gray-500 uppercase tracking-wider py-3">Title</th>
+        <th class="text-start font-medium text-gray-500 uppercase tracking-wider py-3">Artist</th>
+        <th class="text-start font-medium text-gray-500 uppercase tracking-wider py-3">Genre</th>
+        <th class="text-start font-medium text-gray-500 uppercase tracking-wider py-3">Plays</th>
+        <th class="text-start font-medium text-gray-500 uppercase tracking-wider py-3">Factorial Id</th>
+      </tr>
+    </thead>
+    <tbody class="bg-white divide-y divide-gray-200">
+      <ng-container *ngFor="let song of songs">
+        <tr>
+          <td class="py-4 whitespace-nowrap">{{ song.id }}</td>
+          <td class="py-4 whitespace-nowrap">{{ song.title }}</td>
+          <td class="py-4 whitespace-nowrap">{{ song.artist }}</td>
+          <td class="py-4 whitespace-nowrap">{{ song.genre }}</td>
+          <td class="py-4 whitespace-nowrap">{{ song.plays }}</td>
+          <td class="py-4 whitespace-nowrap">{{ song.factorialPlays }}</td>
+        </tr>
+      </ng-container>
+      <tr *ngIf="loading">
+        <td class="flex justify-center w-full mt-5">
+          <div class="spinner-dots h-8 w-8 text-purple-600">
+            <span
+              class="animate-bounce inline-block h-full w-full bg-current rounded-full"
+            ></span>
+          </div>
+        </td>
+      </tr>
+        <tr *ngIf="error">
+          <td colspan="6" class="text-center">
+            <p class="text-red-500">
+              {{error?.message ?? 'Error occurred'}}
+            </p>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
