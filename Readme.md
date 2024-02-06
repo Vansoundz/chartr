@@ -21,17 +21,17 @@ This document provides Instructions on how to run ChartR application in your loc
 
 2. Restore the .NET packages:
     ```bash
-    dotnet restore
+    dotnet restore chartr.sln
     ```
 
 3. Build the API:
     ```bash
-    dotnet build
+    dotnet build chartr.sln
     ```
 
 4. Run the API:
     ```bash
-    dotnet run
+    dotnet run chartr.sln
     ```
 
 ## Building and Running the Angular UI
@@ -53,7 +53,7 @@ This document provides Instructions on how to run ChartR application in your loc
     ```
 
 The application should now be running locally. 
-To view the UI, open a browser and navigate to `http://localhost:4200`.The API should be available at `https://localhost:7002`. To view the swagger documentation, enter the url `https://localhost:7002/swagger`
+To view the UI, open a browser and navigate to `http://localhost:4200`.The API should be available at `http://localhost:5234`. To view the swagger documentation, enter the url `http://localhost:5234/swagger`
 
 ### Additional Notes:
 

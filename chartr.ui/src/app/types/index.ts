@@ -6,5 +6,5 @@ export interface ISong {
   artist: string
   genre: Genre
   plays: number
-  factorialPlays: number
+  factorialId: number
 }
